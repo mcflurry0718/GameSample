@@ -1,11 +1,16 @@
+package game.sample.service;
+
 import java.util.List;
+
+import game.sample.exception.GameNotFoundException;
+import game.sample.object.Game;
 
 /**
  * The GameService interface provides methods for retrieving, creating, updating, and deleting games.
  */
 public interface GameService {
     
-    /**
+    /**
      * Retrieves all games.
      * @return a list of all games
      */
@@ -19,7 +24,7 @@ public interface GameService {
      */
     Game getGameByName(String name) throws GameNotFoundException;;
     
-    /**
+    /**
      * Creates a new game.
      * @param game the game to create
      */

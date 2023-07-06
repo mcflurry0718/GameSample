@@ -1,3 +1,5 @@
+package test;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -139,7 +141,7 @@ public class GameIntegrationTest {
         verify(gameService).getGameByName("Game 1");
     }
 
-    @Test
+    @Test
     public void testCreateGameController() {
         // Create a mock GameService
         GameService gameService = mock(GameService.class);
