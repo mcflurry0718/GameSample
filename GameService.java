@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * The GameService interface provides methods for retrieving, creating, updating, and deleting games.
  */
