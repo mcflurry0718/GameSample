@@ -1,3 +1,17 @@
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 @Service
 @Transactional
 @CacheConfig(cacheNames = "games")
@@ -6,7 +20,7 @@ public class GameServiceImpl implements GameService {
 
     // In-memory cache to store games
     @Cacheable("games")
-    private Map<String, Game> gameMap = new HashMap<String, Game>();
+    private Map<String, Game> gameMap = new ConcurrentHashMap<String, Game>();
     
     /**
      * Retrieves all games.
